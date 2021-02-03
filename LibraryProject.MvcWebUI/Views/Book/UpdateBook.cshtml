@@ -1,0 +1,29 @@
+﻿@model Book
+
+@{
+    ViewBag.Title = "UpdateBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-6">
+    <form method="post">
+        <div class="form-group">
+            <label>Book Name</label>
+            <input value="@Model.BookName" type="text" name="BookName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Author Name</label>
+            <input value="@Model.AuthorName" type="text" name="AuthorName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Publisher</label>
+            <input value="@Model.PublisherName" type="text" name="PublisherName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Category Id</label>
+            <input value="@Model.CategoryId" type="number" name="CategoryId" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+

@@ -1,0 +1,31 @@
+﻿@model List<Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("New Category", "AddCategory",null, new { @class = "btn btn-success" })
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Category Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Id</td>
+                <td>@category.CategoryName</td>
+                <td>
+                    @Html.ActionLink("Update", "UpdateCategory",new {id=category.Id }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Remove", "DeleteCategory",new {id=category.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

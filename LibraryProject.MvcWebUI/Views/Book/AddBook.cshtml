@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "AddBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3></h3>
+<div class="col-md-6">
+    <form method="post">
+        <div class="form-group">
+            <label>Book Name</label>
+            <input type="text" name="BookName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Author Name</label>
+            <input type="text" name="AuthorName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Publisher</label>
+            <input type="text" name="PublisherName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Category Id</label>
+            <input type="number" name="CategoryId" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+

@@ -1,0 +1,43 @@
+﻿@model List<Book>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3></h3>
+@Html.ActionLink("Add Book", "AddBook", null, new { @class = "btn btn-success" })
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Publisher</th>
+            <th>Category</th>
+            <th>Update/Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.BookName</td>
+                <td>@book.AuthorName</td>
+                <td>@book.PublisherName</td>
+                @foreach (var category in ViewBag.Categories as List<Category>)
+                {
+                    if (category.Id == book.CategoryId)
+                    {
+                        <td>@category.CategoryName</td>
+                    }
+                }
+                <td>
+                    @Html.ActionLink("Remove", "DeleteBook", new { id = book.Id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Update", "UpdateBook", new { id = book.Id }, new { @class = "btn btn-warning" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
